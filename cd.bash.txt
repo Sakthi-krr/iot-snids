@@ -1,0 +1,6 @@
+cd iot-nids-dashboard
+git init
+git add .
+git commit -m "Initial commit: IoT NIDS Dashboard"
+git remote add origin <your-github-repo-url>
+git push -u origin master

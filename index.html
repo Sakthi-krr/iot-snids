@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IoT NIDS Dashboard</title>
+    <meta http-equiv="refresh" content="5">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>IoT Network Intrusion Detection System</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Packet Summary</th>
+            <th>Status</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log[0] }}</td>
+            <td>{{ log[1] }}</td>
+            <td class="{{ 'intrusion' if log[2] == 'Intrusion' else 'normal' }}">{{ log[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
